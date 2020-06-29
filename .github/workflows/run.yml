@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: 15 8,20 * * *
+    - cron: 21 20 * * *
 jobs:
   run-it:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
       - name: Run
         run: |
           if [ '${{ secrets.BDUSS }}' != '' ]; then sed -i "s/xxxxx/${{ secrets.BDUSS }}/" tieba.php; fi
-          random_time=$(($RANDOM % 300))
+          random_time=$((600 % 300))
           echo "等待 ${random_time} 分钟后开始签到"
           for((i=1;i<=${random_time};i++));  
           do
