@@ -1,4 +1,4 @@
-name: Run it on action
+name: Run it on action 
 
 on:
   push:
